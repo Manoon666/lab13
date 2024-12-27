@@ -23,7 +23,7 @@ int main()
 }
 
 void showImage(const bool image[][M]) {
-    cout << string(M + 2, '-') << endl;
+    cout << "------------------------------------------------------------------------" << endl;
     for (int i = 0; i < N; i++) {
         cout << "|";
         for (int j = 0; j < M; j++) {
@@ -35,14 +35,13 @@ void showImage(const bool image[][M]) {
         }
         cout << "|" << endl;
     }
-    cout << string(M + 2, '-') << endl;
+    cout << "------------------------------------------------------------------------" << endl;
 }
-
 void updateImage(bool image[][M], int s, int x, int y) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
             if (sqrt(pow(i - x, 2) + pow(j - y, 2)) <= s - 1) {
-                image[i][j] = true; // Mark this cell as part of the brush
+                image[i][j] = true;
             }
         }
     }
